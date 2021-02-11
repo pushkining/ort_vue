@@ -1,4 +1,5 @@
 //import {arr} from './ikao.js';
+
 let arr = new Map
 arr.set('A','Альфа')
     .set('B','Браво')
@@ -40,11 +41,12 @@ arr.set('A','Альфа')
 let ikaoValue = prompt("Введите код ИКАО:");
 
 let ikao = [...ikaoValue];
+ikao = ikao.map((x)=> {return x.toUpperCase()});
 
-for(let i = 0; i <= ikao.length-1; i++) {
+for(let i = 0; i <= ikao.length-1; i++) {   
     if(arr.has(ikao[i])) {
         console.log( arr.get(ikao[i]))
     }
-    console.log(ikao[i])
 }
-console.log(ikao);
+
+//console.log(ikao);
