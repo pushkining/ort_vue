@@ -37,8 +37,10 @@ arr.set('A','Альфа')
     .set('8','Вісім')
     .set('9','Дев\'ять')
     .set('0','Нуль');
+//let regexp = new RegExp(/[A-Za-z0-9]/, "i");
 
 let ikaoValue = prompt("Введите код ИКАО:");
+//ikaoValue = ikaoValue.match(regexp);
 
 let ikao = [...ikaoValue];
 ikao = ikao.map((x)=> {return x.toUpperCase()});
