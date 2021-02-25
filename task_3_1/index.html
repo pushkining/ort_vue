@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../task_0/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../task_0/assets/css/style.css">
+    <script async src="assets/js/main.js"></script>
+</head>
+
+<body>
+    <div class="container w-50">
+        <h1>Кредитный аннуитетный калькулятор</h1>
+        <form name="credit">
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="sumCredit" class="form-label">Сумма кредита:</label>
+                    <input type="number" class="form-control" id="sumCredit" value="100000">
+                </div>
+                <label for="termCredit" class="form-label">Срок кредитования (месяцев):</label>
+                <input type="number" class="form-control" id="termCredit" value="12">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="rateCredit">Процентная ставка (процентов годовых):</label>
+                <input type="number" class="form-control" id="rateCredit" value="12">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calcMoney()">Рассчитать</button>
+            <button type="button" class="btn btn-primary" onclick="again()">Сброс</button>
+        </form>
+        <div class="wrapper-output my-5">
+            <div class="outputCredit1"></div>
+            <div class="outputCredit2"></div>
+            <div class="outputCredit3 my-3">
+                <td>
+                    <th>Месяц</th>
+                    <th>Остаток</th>
+                    <th>На тело кредита</th>
+                    <th>Процент по кредиту</th>
+                </td>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

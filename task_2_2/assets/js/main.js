@@ -37,18 +37,32 @@ arr.set('A','Альфа')
     .set('8','Вісім')
     .set('9','Дев\'ять')
     .set('0','Нуль');
-//let regexp = new RegExp(/[A-Za-z0-9]/, "i");
+//let regexp = new RegExp(/[A-Za-z0-9]/);
+let ikaoValue = document.querySelector('#ikao').value;
+let modIkao = document.querySelector('#mod-ikao');
 
-let ikaoValue = prompt("Введите код ИКАО:");
-//ikaoValue = ikaoValue.match(regexp);
-
-let ikao = [...ikaoValue];
-ikao = ikao.map((x)=> {return x.toUpperCase()});
-
-for(let i = 0; i <= ikao.length-1; i++) {   
-    if(arr.has(ikao[i])) {
-        console.log( arr.get(ikao[i]))
+function getIkao(){
+    
+    console.log(ikaoValue);
+    
+    let ikao = [...ikaoValue];
+    for(let i = 0; i <= ikao.length-1; i++) {   
+        if(arr.has(ikao[i])) {
+            //console.log( arr.get(ikao[i]))
+            modIkao.innerHTML = arr.get(ikao[i]);
+        }
     }
-}
 
-//console.log(ikao);
+}
+// let ikaoValue = prompt("Введите код ИКАО:");
+// //ikaoValue = ikaoValue.match(regexp);
+
+// let ikao = [...ikaoValue];
+// ikao = ikao.map((x)=> {return x.toUpperCase()});
+
+// for(let i = 0; i <= ikao.length-1; i++) {   
+//     if(arr.has(ikao[i])) {
+//         console.log( arr.get(ikao[i]))
+//     }
+// }
+modIkao.innerHTML = 'Hello';
