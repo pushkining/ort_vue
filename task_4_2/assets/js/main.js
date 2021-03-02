@@ -16,16 +16,16 @@ function detectINN() {
 
     let inputINNVal = inputINN.value.split('');
 
-    console.log(inputINNVal);
     let controlSum = 0;
     controlSum = inputINNVal[0] * -1 + inputINNVal[1] * 5 + inputINNVal[2] * 7 + inputINNVal[3] * 9 + inputINNVal[4] * 4 + inputINNVal[5] * 6 + inputINNVal[6] * 10 + inputINNVal[7] * 5 + inputINNVal[8] * 7;
+    
     if (controlSum % 11 == 10) {
         controlSum = controlSum % 10;
     }
     if (inputINNVal[9] == (controlSum % 11)) {
         outputINN1.innerHTML = "ИНН верифицирован";
         let birthdayNum = inputINNVal.slice(0, 5).join('');
-        console.log(controlSum % 11);
+        
         d.setDate(d.getDate() + (birthdayNum - 31));    //Почему то считает на месяц вперед, пришлось перехитрить
         outputINN2.innerHTML = `Дата рождения: ${d.toLocaleString("ru", options)}`;
 
@@ -37,9 +37,6 @@ function detectINN() {
     } else {
         outputINN1.innerHTML = "ИНН некорректный"
     }
-
-
-
 }
 
 function again() {
