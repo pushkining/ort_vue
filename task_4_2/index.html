@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INN</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container w-50">
+        <form name="inn-ua">
+            
+            <div class="mb-3">
+                <label class="form-label" for="inputINN">Введите ИНН:</label>
+                <input type="number" class="form-control" id="inputINN" pattern="[0-9]{10,}" min="10" max="10" value="3463463460">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="detectINN()">Проверить</button>
+            <button type="button" class="btn btn-primary" onclick="again()">Сброс</button>
+        </form>
+        <h3 id="outINN1" class="mt-1"></h3><br>
+        <div id="outINN2" class="mt-1"></div><br>
+        <div id="outINN3" class="mt-1"></div><br>
+    </div>
+
+    <script src='./assets/js/main.js'></script>
+</body>
+
+</html>
