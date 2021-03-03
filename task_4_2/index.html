@@ -15,9 +15,9 @@
             
             <div class="mb-3">
                 <label class="form-label" for="inputINN">Введите ИНН:</label>
-                <input type="number" class="form-control" id="inputINN">
+                <input type="number" class="form-control" id="inputINN" oninput="detectINNTest()">
             </div>
-            <button type="button" class="btn btn-primary" onclick="detectINN()">Проверить</button>
+            <!-- <button type="button" class="btn btn-primary" >Проверить</button> -->
             <button type="button" class="btn btn-primary" onclick="again()">Сброс</button>
         </form>
         <h3 id="outINN1" class="mt-1"></h3><br>
