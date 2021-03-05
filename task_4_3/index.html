@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container w-50">
+        <form name="credit-card">
+            
+            <div class="mb-3">
+                <label class="form-label" for="inputCard">Введите номер карты:</label>
+                <input type="number" class="form-control" id="inputCard" value="5168757395205810">
+            </div>
+            <button type="button" class="btn btn-primary" onclick="detectCard()">Проверить</button>
+            <button type="button" class="btn btn-primary" onclick="again()">Сброс</button>
+        </form>
+        <h3 id="outCard1" class="mt-1"></h3><br>
+        <!-- <div id="outINN2" class="mt-1"></div><br>
+        <div id="outINN3" class="mt-1"></div><br> -->
+    </div>
+
+    <script src='./assets/js/main.js'></script>
+</body>
+
+</html>
