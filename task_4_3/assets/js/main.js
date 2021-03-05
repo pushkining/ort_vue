@@ -7,10 +7,13 @@ const maestro = new Set(["0604", "5018", "5020", "5038", "5893", "6304", "6759",
 
 function detectCard() {
     let user = {};
-    let inputCard = document.querySelector('#inputCard').value;
-    let inputCard =  inputCard.replace(/\D/g, '');
+    let inputCardValText = "";
+    let inputCard = document.querySelector('#inputCard');
+    inputCardValText = inputCard.value;
+    
+    inputCard =  inputCardValText.replace(/\D/g, '');
     //let inputCardVal1 = inputCard.split('');
-console.log(typeof inputCard);
+
     user.card = inputCard;
     let inputCardVal = [...inputCard].join('');
 
@@ -22,10 +25,10 @@ console.log(typeof inputCard);
     //inputCardVal.map(string => parseInt(string));
     let sum = 0;
     let bEven = false;
-    card = inputCardVal.replace(/\D/g, '');
+    //card = inputCardVal.replace(/\D/g, '');
 
-    for (let n = card.length - 1; n >= 0; n--) {
-        let nDigit = parseInt(card.charAt(n), 10);
+    for (let n = inputCardVal.length - 1; n >= 0; n--) {
+        let nDigit = parseInt(inputCardVal.charAt(n), 10);
 
         if (bEven && (nDigit *= 2) > 9) {
             nDigit -= 9;
@@ -52,11 +55,9 @@ console.log(typeof inputCard);
     } else {
         user.correct = false;
     }
-
-
     console.log(user);
 }
 
 function again() {
-    window.location.reload();
+    window.location.reload();   // Удобно дебажить с ней
 }
