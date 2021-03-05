@@ -1,6 +1,8 @@
 
 
-let outputCard = document.querySelector('#outCard1');
+let outputCard1 = document.querySelector('#outCard1');
+let outputCard2 = document.querySelector('#outCard2');
+let outputCard3 = document.querySelector('#outCard3');
 const master_card = new Set(["51", "52", "53", "54", "55", "22", "23", "24", "25", "26", "27"]);
 const visa = new Set(["4026", "4175", "4508", "4844", "4913", "4917", "4"]);
 const maestro = new Set(["0604", "5018", "5020", "5038", "5893", "6304", "6759", "6761", "6762", "6763"]);
@@ -13,11 +15,9 @@ function detectCard() {
     
     inputCard =  inputCardValText.replace(/\D/g, '');
     //let inputCardVal1 = inputCard.split('');
-
     user.card = inputCard;
+    
     let inputCardVal = [...inputCard].join('');
-
-
     let segment4 = inputCardVal.slice(0, 4);
     let segment2 = inputCardVal.slice(0, 2);
     let segment1 = inputCardVal.slice(0, 1);
@@ -29,16 +29,15 @@ function detectCard() {
 
     for (let n = inputCardVal.length - 1; n >= 0; n--) {
         let nDigit = parseInt(inputCardVal.charAt(n), 10);
-
         if (bEven && (nDigit *= 2) > 9) {
             nDigit -= 9;
         }
-
         sum += nDigit;
         bEven = !bEven;
     }
     let correct = sum % 10 == 0;
-    if (correct == true) {
+    
+    if (correct == true && user.card != '') {
         user.correct = true;
         if (visa.has(segment1)) {
             user.paymentSystem = 'visa';
@@ -56,8 +55,11 @@ function detectCard() {
         user.correct = false;
     }
     console.log(user);
+    outputCard1.innerHTML = `Номер: ${user.card}<br>`;
+    outputCard2.innerHTML = `Валидация: ${user.correct}<br>`;
+    outputCard3.innerHTML = `Платёжная система: ${user.paymentSystem}`;
 }
 
-function again() {
-    window.location.reload();   // Удобно дебажить с ней
-}
+// function again() {
+//     window.location.reload();   // Удобно дебажить с ней
+// }
