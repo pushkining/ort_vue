@@ -30,15 +30,21 @@ function detectINN() {
     };
     let inputINNVal = inputINN.value.split('');
     let controlSum = 0;
-    // if (inputINNVal.length == 10) {
+    if (inputINNVal.length == 10) {
     controlSum = inputINNVal[0] * -1 + inputINNVal[1] * 5 + inputINNVal[2] * 7 + inputINNVal[3] * 9 + inputINNVal[4] * 4 + inputINNVal[5] * 6 + inputINNVal[6] * 10 + inputINNVal[7] * 5 + inputINNVal[8] * 7;
     // console.log(controlSum);
     // console.log(controlSum % 11);
     if (inputINNVal[9] == (controlSum % 11 % 10)) {
         outputINN1.innerHTML = "ИНН верифицирован";
         let birthdayNum = inputINNVal.slice(0, 5).join('');
-
-        d.setDate(d.getDate() + (birthdayNum - 31));    //Почему то считает на месяц вперед, пришлось перехитрить
+        let nDate = new Date();
+        
+        d.setDate(d.getDate() + (birthdayNum - 31));
+        let xDate = nDate.getTime();
+        let dDate = d.getTime();
+        let yDate = xDate - dDate;
+        console.log(yDate/1000/60/60/24/365 - 1);
+        
         outputINN2.innerHTML = `Дата рождения: ${d.toLocaleString("ru", options)}`;
 
         if (inputINNVal[8] % 2 == 0) {
@@ -49,9 +55,9 @@ function detectINN() {
     } else {
         outputINN1.innerHTML = "ИНН некорректный"
     }
-    // } else {
-    //     outputINN1.innerHTML = "ИНН некорректно введен(недостаточно цифер)"
-    // }
+    } else {
+        outputINN1.innerHTML = "ИНН некорректно введен(недостаточно цифер)"
+    }
     //setTimeout(again, 15000);
 }
 
