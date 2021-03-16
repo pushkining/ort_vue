@@ -8,7 +8,7 @@
 //console.log(date.toLocaleString("ru", options));
 
 let current = new Array();
-
+const start = Date.now();
 for (let i = 20210128; i >= 20210101; i--) {
     let URL = `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&date=${i}&json`
     let xhr = new XMLHttpRequest();
@@ -23,7 +23,7 @@ for (let i = 20210128; i >= 20210101; i--) {
 for (let j = 0; j < current.length; j++) {
     console.log(`Дата: ${current[j][0].exchangedate} Курс: ${current[j][0].rate}`);
 }
+const finish = Date.now();
 
-
-
+console.log(finish - start, "ms");
 
