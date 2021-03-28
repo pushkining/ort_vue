@@ -13,7 +13,7 @@ for (let i = 20210128; i >= 20210101; i--) {
     let URL = `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&date=${i}&json`
     let xhr = new XMLHttpRequest();
     
-    xhr.open('GET', URL, false);
+    xhr.open('GET', URL, true);
     xhr.onload = function () {
         let data = JSON.parse(xhr.responseText);
         current.unshift(data);
