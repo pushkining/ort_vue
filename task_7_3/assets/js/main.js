@@ -6,27 +6,18 @@
 // tmp.sort(new Function('x, y', 'return x - y')); // если не критично, то вместо tmp пропишите mas
 
 // console.log(tmp.slice(0, 2));
-// const URL = "assets/api.php";
 
-// let xhr = new XMLHttpRequest;
-
-// xhr.open('GET', URL);
-// xhr.onload = function(){
-//     console.log(xhr);
-//     let data = JSON.parse(xhr.responseText);
-//     console.log(data);
-// };
-// xhr.send();
 const settings = {
-	"async": true,	
+	"async": true,
 	"url": "assets/api.json",
 	"method": "GET",
 };
 
-$.ajax(settings).done(function (response) {
-	//console.log(response);
-}).done((data)=>console.log(data))
-;
-// for (const itera of response) {
-// 	console.log(itera = itera.response.name) 
-// }
+$.ajax(settings).done((data) => {
+	for (const itera of data) {
+		// console.log(itera.name,itera.country)
+		$('.item-name').append(` ${itera.name}<br>`);
+		$('.item-country').append(` ${itera.country}<br>`);
+		$('.item-score').append(` ${itera.score}<br>`);
+	}
+});

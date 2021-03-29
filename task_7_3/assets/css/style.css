@@ -1,0 +1,7 @@
+.wrapper-item {
+    display: flex;
+}
+
+.item-name, .item-country, .item-score {
+    width: 180px;
+}
