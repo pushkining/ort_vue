@@ -16,10 +16,24 @@
   <section id="section-biathlon">
     <div class="container">
       <h1>Biathlon API</h1>
+      <div class="wrapper-item-header m-2">
+        <div class="item-range-header m-2">#</div>
+        <div class="item-name-header m-2 w-25"><button id="sort-by-name" class="btn btn-info mx-2">Сортировать по
+            имени</button></div>
+        <div class="item-country-header m-2"><button id="sort-by-country" class="btn btn-info mx-2">Сортировать по
+            стране</button></div>
+        <div class="item-score-header m-2"><button id="sort-by-range" class="btn btn-info mx-2">Сортировать по
+            очкам</button></div>
+      </div>
       <div class="wrapper-item">
+        <div class="item-range m-2"></div>
         <div class="item-name m-2 w-25"></div>
-        <div class="item-country m-2"></div>
-        <div class="item-score m-2"></div>
+        <div class="item-country m-2 text-center"></div>
+        <div class="item-score m-2 text-center"></div>
+      </div>
+      <div class="wrap-search">
+        <button id="search-by-name" class="btn btn-info">Найти биатлониста</button>
+        <input type="text" id="search-value">
       </div>
     </div>
   </section>

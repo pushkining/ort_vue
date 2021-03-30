@@ -1,7 +1,16 @@
-.wrapper-item {
+.wrapper-item, .wrapper-item-header {
     display: flex;
 }
 
-.item-name, .item-country, .item-score {
+.item-name, .item-country, .item-score,
+.item-name-header, .item-country-header, .item-score-header {
     width: 200px;
+}
+
+.btn {
+    width: 80px;
+    height: 30px;
+    font-size: 10px;
+    color: azure;
+    line-height:80%;
 }
