@@ -15,14 +15,7 @@ function clearList(){
 		$('.item-score').empty();
 	}
 }
-function findPlayer(arr) {  //Вот тут засада в функции, не могу понять
-	let plVal =  $("#search-value").val();
-	if(plVal == arr.name) {
-		console.log("tratyattat")
-	}else{
-		console.log(plVal); //Срабатывает тут
-	};
-  }     
+     
 const settings = {
 	"async": true,
 	"url": "assets/api.json",
@@ -54,8 +47,12 @@ $.ajax(settings)
 			getList(dataFoo);
 		})
 		$("#search-by-name").click(()=>{
-			//let player =  $("#search-value").val();
-			findPlayer(dataFoo);
+			let playerVal =  $("#search-value").val();
+			let player = dataFoo.find(item => item.name == playerVal);
+			$(".item-range-search").empty().append(`${player.range}`);
+			$(".item-name-search").empty().append(`${player.name}`);
+			$(".item-country-search").empty().append(`${player.country}`);
+			$(".item-score-search").empty().append(`${player.score}`);
 		})
 	}
 	);
