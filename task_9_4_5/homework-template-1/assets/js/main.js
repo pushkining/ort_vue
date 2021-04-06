@@ -17,5 +17,5 @@ for (item of result) {
 		bEven = !bEven;
 	}
 	let correct = sum % 10 == 0;
-	if (correct) console.log(item);
+	if (correct) console.log(item.match(/.{4}/g).join(' '));
 }
