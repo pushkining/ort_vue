@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document Template</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.png">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body>
+
+    <div class="container my-5" id='app'>
+
+        <h1>Countries App</h1>
+        <div class='text-right'>{{search}}
+            <input v-model='search' type="text" placeholder="Search...">
+        <button @click="getFlag()">bu</button>
+        </div>
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col" @click="setSort('name')">
+                        Name
+                        <button v-if="sortField == 'name'" class='btn btn-outline-secondary'>
+                        <i class="fas" :class="{
+                        'fa-angle-up': sortDirection,
+                        'fa-angle-down': !sortDirection,
+                        }"></i>
+                        </button>
+                    </th>
+                    <th scope=" col " @click="setSort('code') ">
+                        Code
+                        <button v-if="sortField=='code' " class='btn btn-outline-secondary'>
+                        <i class="fas " :class="{ 'fa-angle-up': sortDirection, 'fa-angle-down': !sortDirection, } "></i>
+                        </button>
+                    </th>
+                    <th scope="col " @click="setSort('capital') ">
+                        Capital
+                        <button v-if="sortField=='capital' " class='btn btn-outline-secondary'>
+                        <i class="fas " :class="{ 'fa-angle-up': sortDirection, 'fa-angle-down': !sortDirection, } "></i>
+                        </button>
+                    </th>
+                    <th scope="col ">
+                        Flag
+                    </th>
+                    <th scope="col ">
+                        Borders
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- One Item -->
+                <tr v-for='item in showList'>
+                    <th>{{item.name}}</th>
+                    <td>{{item.alpha2Code}}({{item.alpha3Code}})
+                    </td>
+                    <td>{{item.capital}}</td>
+                    <td>
+                        <img style="width:20px " :src="item.flag ">
+                    </td>
+                    <td><img v-for = 'i in item.borders' :src="getFlag(i)" style="width:20px" class="mx-1"></td>
+                </tr>
+                <!-- End Of One Item -->
+                
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+
+</html>
