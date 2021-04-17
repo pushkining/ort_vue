@@ -19,7 +19,7 @@
         <h1>Countries App</h1>
         <div class='text-right'>{{search}}
             <input v-model='search' type="text" placeholder="Search...">
-        <button @click="getFlag()">bu</button>
+        <!-- <button @click="getFlag()">bu</button> -->
         </div>
 
         <table class="table mt-4">
@@ -65,7 +65,7 @@
                     <td>
                         <img style="width:20px " :src="item.flag ">
                     </td>
-                    <td><img v-for = 'i in item.borders' :src="getFlag(i)" style="width:20px" class="mx-1"></td>
+                    <td><img v-for = 'i in item.borders' :src="getFlags(i)" style="width:20px" class="mx-1"></td>
                 </tr>
                 <!-- End Of One Item -->
                 

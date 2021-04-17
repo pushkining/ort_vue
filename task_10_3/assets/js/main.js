@@ -27,7 +27,7 @@ Vue.createApp({
             }
             return false;            
         },
-        getFlag(code) {
+        getFlags(code) {
             // this.bordersList = new Map();
             // for (i in this.countriesList) {
             //     this.bordersList.set(this.countriesList[i].alpha3Code,this.countriesList[i].flag)
@@ -38,10 +38,7 @@ Vue.createApp({
              
              let URL = `https://restcountries.eu/data/${code.toLowerCase()}.svg`;
              return URL;
-        },
-        showItem() {
-            
-        }
+        }        
     },
 
     computed: {
