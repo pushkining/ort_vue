@@ -58,7 +58,6 @@ function detectINN() {
     } else {
         outputINN1.innerHTML = "ИНН некорректно введен(недостаточно цифер)"
     }
-    //setTimeout(again, 15000);
 }
 
 function again() {

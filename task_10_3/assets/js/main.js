@@ -19,7 +19,8 @@ Vue.createApp({
         isOK(item){
             let s = this.search.toLowerCase();
             for(let key in item){
-                if(item[key]
+                if(!item[key]) continue;
+                if(item[key].toString()
                         .toLowerCase()
                             .includes(s)){
                     return true;
@@ -28,14 +29,7 @@ Vue.createApp({
             return false;            
         },
         getFlags(code) {
-            // this.bordersList = new Map();
-            // for (i in this.countriesList) {
-            //     this.bordersList.set(this.countriesList[i].alpha3Code,this.countriesList[i].flag)
-            // }
-            // console.log(this.bordersList)
-
              this.countriesList.alpha3Code = code;
-             
              let URL = `https://restcountries.eu/data/${code.toLowerCase()}.svg`;
              return URL;
         }        

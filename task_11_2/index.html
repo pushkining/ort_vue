@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>INN</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body>
+
+    <div class="container my-5" id='app'>
+
+        <h1>INN App{{title}}</h1>
+        <div class='text-right'>Введите ИНН:
+            <input v-model='inputINN' type="text" @input="decodeINN()">
+        <button @click="decodeINN()">Расшифровать</button>
+        </div>
+        
+        <div class="correction alert" :class="{'alert-danger':isCorrect, 'alert-success':!isCorrect,}"  v-html="correct" >{{inputINN}}</div>
+        <div class="inn">Идентификационный код: {{inputINN}}</div>
+        <div class="dateBirthday"> {{dateBirthday}}</div>
+        <div class="male">{{male}}</div>
+        <div class="goroskop">{{yearAnimal}}</div>
+        <div class="goroskop">Знак зодиака: {{zodiac}}</div>
+    </div>
+
+</body>
+
+</html>

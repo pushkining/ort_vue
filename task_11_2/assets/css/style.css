@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMono-Regular.ttf');
+}
+
+* {
+    font-family: 'JetBrains Mono';
+}
+
+
+/* .code-country {
+    padding-right: 50px;
+} */
