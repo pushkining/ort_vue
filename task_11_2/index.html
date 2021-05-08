@@ -19,15 +19,17 @@
         <div class='text-right'>Введите ИНН:
             <input v-model='inputINN' type="text" @input="decodeINN()">
         <button @click="decodeINN()">Расшифровать</button>
-        </div>
+        </div v-if="inputINN.lenght > 9">
         
         <div class="correction alert" :class="{'alert-danger':isCorrect, 'alert-success':!isCorrect,}"  v-html="correct" >{{inputINN}}</div>
+        <div>
         <div class="inn">Идентификационный код: {{inputINN}}</div>
         <div class="dateBirthday"> {{dateBirthday}}</div>
         <div class="male">{{male}}</div>
         <div class="goroskop">{{yearAnimal}}</div>
-        <div class="goroskop">Знак зодиака: {{zodiac}}</div>
+        <div v-if="zodiac ='' " class="goroskop">Знак зодиака: {{zodiac}}</div>
     </div>
+</div>
 
 </body>
 

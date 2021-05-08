@@ -8,7 +8,7 @@ const app = Vue.createApp({
             dateBirthday: '',
             male: '',
             yearAnimal: '',
-            zodiac: 'fg',
+            zodiac: '',
         }
     },
     methods: {
@@ -34,7 +34,6 @@ const app = Vue.createApp({
                     this.dateBirthday = `Дата рождения: ${d.toLocaleString("ru", options)}`;
 
                     console.log();
-                    let input = 2006;
                     let animals = ["Обезьяны", "Петуха", "Собаки", "Свиньи", "Крысы", "Быка", "Тигра", "Кролика", "Дракона", "Змеи", "Лошади", "Козы"];
 
                     let animalIndx = d.getFullYear() % 12;
@@ -68,9 +67,6 @@ const app = Vue.createApp({
                 this.correct = "ИНН некорректно введен(недостаточно цифер)";
             }
         },
-        getZodiac() {
-
-        }
     },
     computed: {
 
