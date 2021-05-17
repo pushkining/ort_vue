@@ -6,8 +6,14 @@ let tmp = arr2.slice(0); // чтобы не изменять порядок эл
 tmp.sort(new Function('x, y', 'return x - y')); // если не критично, то вместо tmp пропишите mas
 
 console.log(tmp.slice(0, 2));
-let input = 2006;
-let animals = ["Обезьяны", "Петуха", "Собаки", "Свиньи", "Крысы", "Быка", "Тигра", "Кролика", "Дракона", "Змеи", "Лошади", "Козы"];
+// let input = 2006;
+// let animals = ["Обезьяны", "Петуха", "Собаки", "Свиньи", "Крысы", "Быка", "Тигра", "Кролика", "Дракона", "Змеи", "Лошади", "Козы"];
 
-let animalIndx = input % 12;
-console.log(animals[animalIndx]);
+// let animalIndx = input % 12;
+// console.log(animals[animalIndx]);
+
+let a = 10;
+
+aaa.innerHTML = "Женя дурак " + a + " раз";
+let countFool = countFool.value;
+console.log(countFool);

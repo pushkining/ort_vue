@@ -1,84 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        
-        <meta charset="UTF-8">
 
-        <title>Document Template</title>
-    
-        <link rel="shortcut icon" href="./assets/images/favicon.png">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Template</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.png">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="./assets/js/main.js"></script>
+</head>
 
-        <link rel="stylesheet" href="./assets/css/bootstrap.css">
+<body>
 
-        <link rel="stylesheet" href="./assets/css/font-awesome.css">
-
-        <link rel="stylesheet" href="./assets/css/style.css">
-
-        <script src="./assets/js/main.js"></script>
-
-    </head>
-    <body>
-       
-        <div class="container my-5">
-
-            <h1>NBU Rates App</h1>
-
-            <div class='text-right'>
-                <input type="text" placeholder="Search...">
-            </div>
-
-            <table class="table mt-4">
-                <thead>
-                  <tr>
-                    <th scope="col">
-                        Code
-                       
-                    </th>
-                    <th scope="col">
-                        Title
-                      
-                    </th>
-                 
-                    <th scope="col">Rate 
-                       
-                    </th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-
-                    <!-- One Item -->
-                    <tr>
-                        <th>AUD</th>
-                        <td>Австралійський долар</td>
-                        <td>20.7848 грн.</td>
-                        <td> 
-                            <button class='btn btn-primary w-100'>Details</button>
-                        </td>
-                    </tr>
-                    <!-- End Of One Item -->
-
-                </tbody>
-              </table>
-
-              <dialog id='rateDialog'>
-                <div class='text-right mb-4'>
-                    <i 
-                        id='rateDialogCloseBtn' 
-                        style='cursor: pointer;' 
-                        class="far fa-2x fa-times-circle"
-                    ></i>
-                </div>
-                <h1>Code:  <span id='ccPlace'>AUD</h1>
-                <h2>Rate:  <span id='ratePlace'>20.8605 грн.</h2>
-                <h3>Title: <span id='txtPlace'>Австралійський долар</h3>
-                <h4>Date:  <span id='exchangedatePlace'></span></h4>
-
-              </dialog>
-
-           
-
+    <div class="container my-5">
+        <h1>NBU Rates App</h1>
+        <div class='text-right'>
+            <input type="text" placeholder="Search...">
         </div>
-        
-    </body>
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Code</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Rate </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- One Item -->
+
+                <!-- End Of One Item -->
+            </tbody>
+        </table>
+
+        <dialog id='rateDialog'>
+            <div class='text-right mb-4'>
+                <i id='rateDialogCloseBtn' style='cursor: pointer;' class="far fa-2x fa-times-circle"></i>
+            </div>
+            <h1>Code: <span id='ccPlace'>AUD</h1>
+            <h2>Rate: <span id='ratePlace'>20.8605 грн.</h2>
+            <h3>Title: <span id='txtPlace'>Австралійський долар</h3>
+            <h4>Date: <span id='exchangedatePlace'></span></h4>
+
+        </dialog>
+
+    </div>
+
+</body>
+
 </html>

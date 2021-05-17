@@ -17,7 +17,7 @@
 
         <h1>INN App{{title}}</h1>
         <div class='text-right'>Введите ИНН:
-            <input v-model='inputINN' type="text" @input="decodeINN()">
+            <input v-model='inputINN' type="number" @input="decodeINN()">
         <button @click="decodeINN()">Расшифровать</button>
         </div v-if="inputINN.lenght > 9">
         

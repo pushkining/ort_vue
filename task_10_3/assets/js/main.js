@@ -7,7 +7,6 @@ Vue.createApp({
             sortDirection: true,
             countriesList: [],
             search: '',
-            bordersList: [],
         }
     },
 
@@ -18,8 +17,13 @@ Vue.createApp({
         },
         isOK(item){
             let s = this.search.toLowerCase();
+            
             for(let key in item){
+<<<<<<< HEAD
                 if(!item[key]) continue;
+=======
+                if(!item[key])continue;
+>>>>>>> refs/remotes/origin/master
                 if(item[key].toString()
                         .toLowerCase()
                             .includes(s)){
@@ -29,7 +33,11 @@ Vue.createApp({
             return false;            
         },
         getFlags(code) {
+<<<<<<< HEAD
              this.countriesList.alpha3Code = code;
+=======
+             this.countriesList.alpha3Code = code;        
+>>>>>>> refs/remotes/origin/master
              let URL = `https://restcountries.eu/data/${code.toLowerCase()}.svg`;
              return URL;
         }        

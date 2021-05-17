@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     let rates = await fetch(URL);
     rates = await rates.json();
+    console.log(rates);
 
     function render(list) {
         let tbody = document.querySelector('tbody');
@@ -31,9 +32,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             }
         }
     }
-    rateDialogCloseBtn.onclick = function () {
-        rateDialog.close();
-    }
+
+    rateDialogCloseBtn.onclick = () => rateDialog.close();
+
     render(rates);
 
     //console.log(rates);
